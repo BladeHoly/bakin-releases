@@ -17,7 +17,8 @@ try {
     const date = new Date(rel.published_at).toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' });
     const link = document.getElementById('dl');
     link.href = exe.browser_download_url;
-    link.querySelector('span').textContent = `Descargar Bakin ${version}`;
-    document.getElementById('meta').textContent = `Windows 10 y 11 · 64 bits · ${mb} MB · ${date}`;
+    document.getElementById('meta').textContent = `Versión ${version} · Windows 10 y 11 · 64 bits · ${mb} MB · ${date}`;
   }
-} catch { /* offline or rate-limited: the static link stays */ }
+} catch { /* offline or rate-limited: the static link and line stay */ }
+// the button's text never changes; only the line under it appears
+document.getElementById('meta').classList.add('ready');
