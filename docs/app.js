@@ -20,10 +20,4 @@ try {
     link.querySelector('span').textContent = `Descargar Bakin ${version}`;
     document.getElementById('meta').textContent = `Windows 10 y 11 · 64 bits · ${mb} MB · ${date}`;
   }
-  // the release notes: the «- » lines of this version
-  const items = String(rel.body || '').split(/\r?\n/).filter((l) => l.startsWith('- ')).map((l) => l.slice(2));
-  if (items.length) {
-    document.getElementById('notes-version').textContent = rel.tag_name;
-    document.getElementById('notes').replaceChildren(...items.map((t) => Object.assign(document.createElement('li'), { textContent: t })));
-  }
 } catch { /* offline or rate-limited: the static link stays */ }
