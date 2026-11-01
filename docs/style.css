@@ -20,14 +20,23 @@ body::before {
 a:not(.gm-chip) { color: inherit; }
 .dl-button { color: #121118; }
 
-/* only the name and the button, in the middle of the screen */
-.page { min-height: 100dvh; display: grid; place-content: center; justify-items: center; gap: 22px; padding: 24px 16px; text-align: center; }
+/* minimal: the download card exactly in the middle of the screen (rows 1fr auto 1fr),
+   the name and its line just above it, the links at the bottom */
+.page { min-height: 100dvh; display: grid; grid-template-rows: 1fr auto 1fr; justify-items: center; padding: 0 16px 20px; }
+.hero { display: contents; }
+.title { grid-row: 1; align-self: end; display: grid; justify-items: center; text-align: center; gap: 10px; padding-top: 24px; }
+.download { grid-row: 2; }
+.foot { grid-row: 3; align-self: end; }
 /* the logo is the «B»: logo + «akin» read as one word */
-.wordmark { margin: 0; display: flex; align-items: center; gap: 0.06em; font-size: clamp(3rem, 11vw, 5.5rem); line-height: 1;
-  letter-spacing: -0.02em; text-shadow: 0 2px 24px rgb(0 0 0 / 0.7); }
-.wordmark img { width: 0.95em; height: 0.95em; border-radius: 0.24em; box-shadow: 0 4px 24px rgb(0 0 0 / 0.5); }
-.wordmark span { transform: translateY(0.02em); }
-.dl-button { display: inline-flex; align-items: center; gap: 10px; min-height: 3.4rem; padding-inline: 1.8rem;
-  font-size: 1.1rem; font-weight: 600; text-decoration: none; box-shadow: 0 10px 40px rgb(0 0 0 / 0.45); }
+.wordmark { margin: 0; display: flex; align-items: center; gap: 0.06em; font-size: clamp(2.4rem, 7vw, 3.6rem); line-height: 1.1;
+  letter-spacing: -0.02em; text-shadow: 0 2px 18px rgb(0 0 0 / 0.7); }
+.wordmark img { width: 0.95em; height: 0.95em; border-radius: 0.24em; }
+.tagline { margin: 0 0 14px; font-size: 1.15rem; color: var(--gm-ink-muted); text-shadow: 0 2px 18px rgb(0 0 0 / 0.7); }
+
+.download { display: grid; justify-items: center; gap: 8px; padding: 22px 26px; text-align: center; }
+.dl-button { display: inline-flex; align-items: center; gap: 10px; min-height: 3.2rem; padding-inline: 1.6rem;
+  font-size: 1.05rem; font-weight: 600; text-decoration: none; }
 .dl-button svg { width: 20px; height: 20px; }
-.meta { margin: -8px 0 0; font-size: 0.85rem; color: var(--gm-ink-muted); text-shadow: 0 1px 10px rgb(0 0 0 / 0.8); }
+.meta { margin: 0; font-size: 0.85rem; color: var(--gm-ink-muted); }
+
+.foot { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; font-size: 0.85rem; color: var(--gm-ink-muted); }

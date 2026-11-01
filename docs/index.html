@@ -13,12 +13,26 @@
 </head>
 <body>
   <main class="page">
-    <h1 class="wordmark"><img src="icon.png" alt="B" width="128" height="128"><span>akin</span></h1>
-    <a class="gm-chip gm-chip-primary dl-button" id="dl" href="https://github.com/BladeHoly/bakin-releases/releases/latest">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-      <span>Descargar para Windows</span>
-    </a>
-    <p class="meta" id="meta">Windows 10 y 11 · 64 bits</p>
+    <header class="hero">
+      <div class="title">
+      <h1 class="wordmark"><img src="icon.png" alt="B" width="128" height="128"><span>akin</span></h1>
+      <p class="tagline">Tu biblioteca de fotos y música, en tu PC.</p>
+      </div>
+
+      <gm-surface material="frost" radius="28" class="download">
+        <a class="gm-chip gm-chip-primary dl-button" id="dl" href="https://github.com/BladeHoly/bakin-releases/releases/latest">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          <span>Descargar para Windows</span>
+        </a>
+        <p class="meta" id="meta">Windows 10 y 11 · 64 bits</p>
+      </gm-surface>
+    </header>
+
+    <footer class="foot">
+      <a href="https://github.com/BladeHoly/bakin-releases/releases">Todas las versiones</a>
+      <span>·</span>
+      <span>Hecho con <a href="https://www.npmjs.com/package/@glass-midas/components">glass-midas</a></span>
+    </footer>
   </main>
 </body>
 </html>
